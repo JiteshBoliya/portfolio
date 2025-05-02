@@ -9,26 +9,26 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0f1620;
+  background: linear-gradient(135deg, #000000 0%,#350000 100%);
   color: #ffffff;
   min-height: 100vh;
 }
 
 /* Font Awesome Icons (placeholder styles - normally you'd include the actual Font Awesome library) */
-.code-icon::before {
-  content: '<>';
-  font-style: normal;
-}
+// .code-icon::before {
+//   content: '<>';
+//   font-style: normal;
+// }
 
-.mobile-icon::before {
-  content: '📱';
-  font-style: normal;
-}
+// .mobile-icon::before {
+//   content: '📱';
+//   font-style: normal;
+// }
 
-.server-icon::before {
-  content: '🖥️';
-  font-style: normal;
-}
+// .server-icon::before {
+//   content: '🖥️';
+//   font-style: normal;
+// }
 
 /* Custom Tech Icons */
 .fas.fa-database.mongodb:before {

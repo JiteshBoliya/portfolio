@@ -7,7 +7,8 @@
   max-width: 1200px;
   margin: 0 auto;
   gap: 2rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  // background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background-color: transparent;
   position: relative;
   overflow: hidden;
 
@@ -18,7 +19,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(0, 86, 179, 0.1) 0%, rgba(255, 68, 68, 0.1) 100%);
+    // background: linear-gradient(45deg, rgba(0, 86, 179, 0.1) 0%, rgba(255, 68, 68, 0.1) 100%);
     z-index: 0;
   }
 
@@ -30,7 +31,7 @@
     h1 {
       font-size: 3.5rem;
       margin-bottom: 1rem;
-      color: #1a1a1a; // Dark black
+      color: #ffffff; // Dark black
       line-height: 1.2;
       
       .highlight {
@@ -58,7 +59,7 @@
 
     h2 {
       font-size: 2rem;
-      color: #4a4a4a; // Medium gray
+      color: #ffffff; // Medium gray
       margin-bottom: 1rem;
       font-weight: 500;
     }
@@ -66,7 +67,7 @@
     p {
       font-size: 1.2rem;
       margin-bottom: 2rem;
-      color: #666666; // Light gray
+      color: #ffffff; // Light gray
       line-height: 1.6;
     }
   }
