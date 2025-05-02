@@ -2,19 +2,49 @@
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 86, 179, 0.05) 0%, rgba(255, 68, 68, 0.05) 100%);
+    z-index: 0;
+  }
 
   .section-title {
     text-align: center;
     margin-bottom: 3rem;
     font-size: 2.5rem;
+    color: #ffffff; // Dark black
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: #ff4444; // Bright red
+    }
   }
 
   .timeline {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
+    padding: 2rem 0;
+    position: relative;
+    z-index: 1;
 
-    &:before {
+    &::before {
       content: '';
       position: absolute;
       top: 0;
@@ -22,7 +52,7 @@
       transform: translateX(-50%);
       width: 2px;
       height: 100%;
-      background: #007bff;
+      background: linear-gradient(to bottom, #0056b3, #ff4444); // Dark blue to bright red
     }
 
     .timeline-item {
@@ -45,27 +75,40 @@
 
       .timeline-content {
         width: 45%;
-        background: #fff;
+        background: #ffffff;
         padding: 1.5rem;
         border-radius: 8px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid #e0e0e0; // Light gray border
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+          border-color: #0056b3; // Dark blue
+        }
 
         .timeline-header {
           margin-bottom: 1rem;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid #e0e0e0; // Light gray border
 
           h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
+            color: #1a1a1a; // Dark black
           }
 
           .company {
-            color: #007bff;
-            font-weight: 500;
+            color: #0056b3; // Dark blue
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 1rem;
           }
 
           .duration {
-            color: #666;
-            margin-left: 1rem;
+            color: #4a4a4a; // Medium gray
+            font-weight: 500;
           }
         }
 
@@ -79,12 +122,15 @@
               margin-bottom: 0.5rem;
               padding-left: 1.5rem;
               position: relative;
+              color: #4a4a4a; // Medium gray
+              line-height: 1.6;
 
-              &:before {
+              &::before {
                 content: "•";
-                color: #007bff;
+                color: #ff4444; // Bright red
                 position: absolute;
                 left: 0;
+                font-weight: bold;
               }
             }
           }
@@ -99,11 +145,65 @@
               padding: 0.3rem 0.8rem;
               border-radius: 20px;
               font-size: 0.9rem;
-              color: #666;
+              color: #4a4a4a; // Medium gray
+              border: 1px solid #e0e0e0; // Light gray border
+              transition: all 0.3s ease;
+
+              &:hover {
+                background: #0056b3; // Dark blue
+                color: #ffffff;
+                border-color: #0056b3; // Dark blue
+              }
             }
           }
         }
       }
     }
   }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 3rem 1rem;
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .timeline {
+      &::before {
+        left: 0;
+      }
+
+      .timeline-item {
+        &:nth-child(odd),
+        &:nth-child(even) {
+          .timeline-content {
+            width: 85%;
+            margin-left: 15%;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Animation for section entrance
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.experience-section {
+  animation: fadeIn 1s ease-out;
 } 
